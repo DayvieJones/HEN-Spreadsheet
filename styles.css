@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  margin: 0.5rem;
+}
+
+fieldset {
+  margin: 0.2rem;
+}
+
+.calibration {
+  margin: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.headerCalibration {
+  margin: 0.3rem 0 0.4rem 0.5rem;
+}
+
+.calibrationWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.2rem 0.5rem;
+}
+
+.calculateCalibration {
+  margin: 0.5rem;
+}
+
+.outputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.pOutputCalibration {
+  display: inline;
+}
