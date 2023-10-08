@@ -12,7 +12,7 @@
       <div class="calibration">
         <fieldset>
           <!-- zwei Spalten, 5 Reihen -->
-          <h1 class="headerCalibration">Calibration</h1>
+          <h1 class="headerCalibration">Calculation</h1>
           <div class="calibrationWrapper">
             <h2 class="headerWrapper">1 Second</h2>
             <label for="inputCalibration"
@@ -70,8 +70,9 @@
             /></label>            
             </div>
             <div class="outputContainer">
-              <label for="labelOutputCalibration">Output:<p class="pOutputCalibration"> Test</p></label>                
-                <button onclick="calculateCalibration()" class="calculateCalibration">Calculate</button>
+              <label for="labelOutputCalibration">Nozzleoffset in s: <p class="pOutputCalibration" id="OutputOffsetSeconds" > Test</p></label>                
+              <label for="labelOutputCalibration">Nozzleoffset in ms: <p class="pOutputCalibration"id="OutputOffsetMilliSeconds" > Test</p></label>                
+                <button onclick="calculateNozzleoffset()" class="calculateCalibration">Calculate</button>
               </div>
           </div>
         </fieldset>

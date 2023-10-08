@@ -2,12 +2,7 @@
 //Input Calibration 2 einlesen
 
 function arithmeticAverage(Value1, Value2, Value3, Value4, Value5) {
-  console.log(Value1);
-  console.log(Value2);
-  console.log(Value3);
-  console.log(Value4);
-  console.log(Value5);
-  const arithmeticAverage = 5 / (Value1 + Value2 + Value3 + Value4 + Value5);
+  const arithmeticAverage = Value1 + Value2 + Value3 + Value4 + Value5;
   console.log("arithmeticAverage: " + arithmeticAverage);
   return arithmeticAverage;
 }
@@ -19,8 +14,6 @@ function getInput_1() {
   const input4_1 = document.querySelector("#input4_1").value;
   const input5_1 = document.querySelector("#input5_1").value;
   const x = arithmeticAverage(input1_1, input2_1, input3_1, input4_1, input5_1);
-  console.log("x: " + x);
-
   return x;
 }
 
@@ -31,27 +24,36 @@ function getInput_2() {
   const input4_2 = document.querySelector("#input4_2").value;
   const input5_2 = document.querySelector("#input5_2").value;
   const y = arithmeticAverage(input1_2, input2_2, input3_2, input4_2, input5_2);
-  console.log("y: " + y);
-
   return y;
 }
 
-function calculateCalibration() {
-  const time10 = 10.0; //10 Second
-  const time1 = 1.0; //1 Second
-  let mass1 = getInput_1(); //1 second mass
-  let mass10 = getInput_2(); //10 second mass
+function calculateNozzleoffset() {
+  const maxTime = 10.0; //10 Second
+  const minTime = 1.0; //1 Second
+  let minMass = getInput_1(); //1 second mass
+  let maxMass = getInput_2(); //10 second mass
 
-  const timeDifference = time10 - time1;
-  const massDifference = mass10 - mass1;
+  const timeDifference = maxTime - minTime; //time difference calculated maxTime minus minTime
+  const massDifference = maxMass - minMass;
   const massDividedTime = massDifference / timeDifference;
-  const difference = mass1 - massDividedTime;
+  const difference = minMass - massDividedTime;
   const resultTime = (-1 / massDividedTime) * difference; //time difference in second
   const calibrationValue = resultTime * 1000; //time calculate to millisecond
+  console.log("The Nozzleoffset is: " + resultTime.toFixed(2) + " s");
+  console.log("The Nozzleoffset is: " + calibrationValue.toFixed(2) + " ms");
+  writeCalibrationOffset(resultTime, calibrationValue);
+}
 
-  console.log(
-    "Der Kalibrierungswert beträgt: " + calibrationValue.toFixed(2) + " ms"
+function writeCalibrationOffset(changeSecond, changeMilliSecond) {
+  const contentOutputOffsetSeconds = document.querySelector(
+    "#OutputOffsetSeconds"
   );
+  const contentOutputOffsetMilliSeconds = document.querySelector(
+    "#OutputOffsetMilliSeconds"
+  );
+
+  contentOutputOffsetSeconds.innerHTML = changeSecond.toFixed(2);
+  contentOutputOffsetMilliSeconds.innerHTML = changeMilliSecond.toFixed(2);
 }
 
 /*
