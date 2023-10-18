@@ -52,8 +52,8 @@ function writeCalibrationOffset(changeSecond, changeMilliSecond) {
     "#OutputOffsetMilliSeconds"
   );
 
-  contentOutputOffsetSeconds.innerHTML = changeSecond.toFixed(2);
-  contentOutputOffsetMilliSeconds.innerHTML = changeMilliSecond.toFixed(2);
+  contentOutputOffsetSeconds.innerText = changeSecond.toFixed(2);
+  contentOutputOffsetMilliSeconds.innerText = changeMilliSecond.toFixed(2);
 }
 
 /*
