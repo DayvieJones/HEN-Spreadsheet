@@ -11,18 +11,20 @@ fieldset {
   margin: 0.2rem;
 }
 
-.calibration {
+.calibration,
+.mixingRatio {
   margin: 0.2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.headerCalibration {
+.header {
   margin: 0.3rem 0 0.4rem 0.5rem;
 }
 
-.calibrationWrapper {
+.calibrationWrapper,
+.outputMixinRatioWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

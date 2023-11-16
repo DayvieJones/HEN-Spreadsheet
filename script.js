@@ -1,7 +1,9 @@
-//Input Calibration 1 einlesen
-//Input Calibration 2 einlesen
-
 function arithmeticAverage(Value1, Value2, Value3, Value4, Value5) {
+  Value1 = parseFloat(Value1);
+  Value2 = parseFloat(Value2);
+  Value3 = parseFloat(Value3);
+  Value4 = parseFloat(Value4);
+  Value5 = parseFloat(Value5);
   const arithmeticAverage = Value1 + Value2 + Value3 + Value4 + Value5;
   console.log("arithmeticAverage: " + arithmeticAverage);
   return arithmeticAverage;
@@ -13,6 +15,7 @@ function getInput_1() {
   const input3_1 = document.querySelector("#input3_1").value;
   const input4_1 = document.querySelector("#input4_1").value;
   const input5_1 = document.querySelector("#input5_1").value;
+  console.log(input1_1);
   const x = arithmeticAverage(input1_1, input2_1, input3_1, input4_1, input5_1);
   return x;
 }

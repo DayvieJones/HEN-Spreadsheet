@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="refresh" content="10" /> -->
     <title>HEN 4.0</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
@@ -12,68 +13,135 @@
       <div class="calibration">
         <fieldset>
           <!-- zwei Spalten, 5 Reihen -->
-          <h1 class="headerCalibration">Calculation</h1>
+          <h1 class="header headerCalibration">Calculation</h1>
           <div class="calibrationWrapper">
             <h2 class="headerWrapper">1 Second</h2>
-            <label for="inputCalibration"
+            <label for="input1_1"
               >Input 1:
-              <input id="input1_1" class="inputCalibration" type="number"
-            /></label>
+              <input id="input1_1" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input2_1"
               >Input 2:
-              <input id="input2_1" class="inputCalibration" type="number"
-            /></label>
+              <input id="input2_1" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input3_1"
               >Input 3:
-              <input id="input3_1" class="inputCalibration" type="number"
-            /></label>
+              <input id="input3_1" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input4_1"
               >Input 4:
-              <input id="input4_1" class="inputCalibration" type="number"
-            /></label>
+              <input id="input4_1" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input5_1"
               >Input 5:
-              <input id="input5_1" class="inputCalibration" type="number"
-            /></label>
+              <input id="input5_1" class="inputCalibration" type="number" />
+            </label>
           </div>
 
           <div class="calibrationWrapper">
             <h2 class="headerWrapper">10 Seconds</h2>
 
-            <label for="inputCalibration"
+            <label for="input1_2"
               >Input 1:
-              <input id="input1_2" class="inputCalibration" type="number"
-            /></label>
+              <input id="input1_2" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input2_2"
               >Input 2:
-              <input id="input2_2" class="inputCalibration" type="number"
-            /></label>
+              <input id="input2_2" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input3_2"
               >Input 3:
-              <input id="input3_2" class="inputCalibration" type="number"
-            /></label>
+              <input id="input3_2" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input4_2"
               >Input 4:
-              <input id="input4_2" class="inputCalibration" type="number"
-            /></label>
+              <input id="input4_2" class="inputCalibration" type="number" />
+            </label>
 
-            <label for="inputCalibration"
+            <label for="input5_2"
               >Input 5:
-              <input id="input5_2" class="inputCalibration" type="number"
-            /></label>            
+              <input id="input5_2" class="inputCalibration" type="number" />
+            </label>
+          </div>
+
+          <div class="outputContainer">
+            <label for="labelOutputCalibration"
+              >Nozzleoffset in s:
+              <p class="pOutputCalibration" id="OutputOffsetSeconds"></p
+            ></label>
+            <label for="labelOutputCalibration"
+              >Nozzleoffset in ms:
+              <p class="pOutputCalibration" id="OutputOffsetMilliSeconds"></p
+            ></label>
+            <button
+              onclick="calculateNozzleoffset()"
+              class="calculateCalibration"
+            >
+              Calculate
+            </button>
+          </div>
+        </fieldset>
+      </div>
+      <div class="mixingRatio">
+        <fieldset>
+          <h1 class="header">Mixing Ratio</h1>
+          <div class="meteringWrapper">
+            <h2 class="header">Inputs</h2>
+            <label
+              >Part weight:
+              <input id="input1_1" class="inputMixingRatio" type="number" /> in
+              g
+            </label>
+            <br />
+            <label
+              >Metering Time:
+              <input id="input1_1" class="inputMixingRatio" type="number" /> in
+              s
+            </label>
+            <br />
+            <label>
+              Output Total Metering in g/s:
+              <p class="pOutputCalibration" id="OutputTotalMetering"></p
+            ></label>
+            <div class="outputContainer">
+              <button
+                onclick="calculateMixingRatio()"
+                class="button calculateMixingRatio"
+              >
+                Calculate
+              </button>
+            </div>
+          </div>
+
+          <div class="mixingRationWrapper">
+            <label>Mixing Ratio A: 1 </label>
+            <label
+              >Mixing Ratio B:
+              <input id="input1_1" class="inputMixingRatio" type="number" /> 1
+            </label>
+            <br />
+
+            <div class="outputMixinRatioWrapper">
+              Output Mixing ratio A:
+              <p id="outputMixingRatioA"></p>
+              Output Mixing ratio B:
+              <p id="outputMixingRatioB"></p>
             </div>
             <div class="outputContainer">
-              <label for="labelOutputCalibration">Nozzleoffset in s: <p class="pOutputCalibration" id="OutputOffsetSeconds" > Test</p></label>                
-              <label for="labelOutputCalibration">Nozzleoffset in ms: <p class="pOutputCalibration"id="OutputOffsetMilliSeconds" > Test</p></label>                
-                <button onclick="calculateNozzleoffset()" class="calculateCalibration">Calculate</button>
-              </div>
+              <button
+                onclick="calculateMixingRatio()"
+                class="button calculateMixingRatio"
+              >
+                Calculate
+              </button>
+            </div>
           </div>
         </fieldset>
       </div>
